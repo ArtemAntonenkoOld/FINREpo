@@ -1,0 +1,6 @@
+﻿@model IEnumerable<ISharpConvertor.UIModels.OnlyRateModel>
+<select>
+    @foreach(var item in Model){
+    <option>@item.Currency</option>
+    }
+</select>

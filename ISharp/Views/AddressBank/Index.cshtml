@@ -1,0 +1,60 @@
+﻿<section id="wrapper">
+    <div class="container">
+        <div class="rectangle">
+            <h2>Пошук банків</h2>
+
+        </div>
+
+        <div class="left_tri"></div>
+        <div class="right_tri"></div>
+        <div id="content">
+            <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+            <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+            @using (Ajax.BeginForm("SearchAllBanksByCity", new AjaxOptions { UpdateTargetId = "allbanks" }))
+            {
+                <input type="submit" value="За містом" class="enjoy-css_button first" />
+            }
+
+            @using (Ajax.BeginForm("_GetAllBanksMathod", new AjaxOptions { UpdateTargetId = "allbanks" }))
+            {
+                <input type="submit" value="Усі точки" class="enjoy-css_button first" />
+            }
+
+            @using (Ajax.BeginForm("SearchAllBanksByBank", new AjaxOptions { UpdateTargetId = "allbanks" }))
+            {
+
+                <input type="submit" value="За банком" class="enjoy-css_button first" />
+
+            }
+            @using (Ajax.BeginForm("SearchBank", new AjaxOptions { UpdateTargetId = "allbanks" }))
+            {
+
+                <input type="submit" value="За містом і банком" class="enjoy-css_button first" />
+
+            }
+
+
+
+            <!--@using (Ajax.BeginForm("SearchOptimalBankByCityCurrency", new AjaxOptions { UpdateTargetId = "allbanks" }))
+            {
+
+                <input type="submit" value="За курсом і розташуванням" class="enjoy-css_button first" />
+
+            }
+                -->
+            @using (Ajax.BeginForm("SearchOptimalByClosestPoint", new AjaxOptions { UpdateTargetId = "allbanks" }))
+            {
+
+                <input type="submit" value="Найближчі банки" class="enjoy-css_button first" style= " margin-top: 20px;" />
+
+            }
+            <div id="allbanks" style="text-align: center; margin-top: 5pc;">
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</section>
